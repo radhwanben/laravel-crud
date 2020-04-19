@@ -20,6 +20,12 @@ class PostController extends Controller
         return view('post.show' ,compact('posts' ,$posts));
     }
 
+    public function GetSinglePost($title){
+        $post = Post::where('title', $title)->firstOrFail();
+        return view('post.single' ,compact('post' ,$post));
+    }
+
+
     /**
      * this function will load the create post view
      */
@@ -110,7 +116,7 @@ class PostController extends Controller
     public function delete($id){
         $post =Post::find($id);
         $post->delete();
-        redirect()->route('home');
+       return redirect()->route('MyPosts');
     }
 
 }

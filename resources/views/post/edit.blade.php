@@ -53,7 +53,7 @@
                           </div>
                           <div class="form-group">
                             <input class="btn btn-success" type="submit" name="save" value="Update" />
-                          <a href="{{}}" class="btn btn-secondary">back</a>
+                          <a href="{{route('MyPosts')}}" class="btn btn-secondary">back</a>
                           </div>
                 </div>
             </div>

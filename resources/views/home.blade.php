@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in! <a class="btn btn-primary" href="{{route('CreatePost')}}"> create post </a>
+                    You are logged in! 
+                    <br>
+                    <a class="btn btn-primary" href="{{route('CreatePost')}}"> create post </a>
+                    <a class="btn btn-success" href="{{route('MyPosts')}}"> show posts </a>
                 </div>
             </div>
         </div>

@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/','PostController@show')->name('show');
+Route::get('/' , function(){
+	return view('welcome');
+});
 
 Auth::routes();
 
