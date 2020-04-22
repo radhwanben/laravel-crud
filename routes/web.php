@@ -28,7 +28,9 @@ Route::get('myposts',[
 
 Route::get('create',[
 	'uses' =>'PostController@create',
-	'as'=>'CreatePost'
+	'as'=>'CreatePost',
+	'middleware' => 'roles',
+	'roles' => ['Admin', 'Author']
 
 ]);
 
@@ -61,5 +63,22 @@ Route::delete('/{id}',[
 Route::get('/post/{title}',[
 	'uses' =>'PostController@GetSinglePost',
 	'as'=>'showPost'
+
+]);
+
+
+Route::get('/author', [
+	'uses' => 'HomeController@getAuthorPage',
+	'as' => 'author',
+	'middleware' => 'roles',
+	'roles' => ['Admin', 'Author']
+]);
+
+
+
+
+Route::get('project/create',[
+	'uses' =>'projectController@create',
+	'as'=>'CreateProject'
 
 ]);
